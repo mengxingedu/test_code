@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./mock.js"></script>
+    <script>
+    var Random = Mock.Random
+    var data = Mock.mock({
+        // 'string1|1-10': '★',
+
+        //object key
+        // |1生成一条数据，|2 生成两天数据  |1-3 生成一到三条数据 
+        'object|1': {
+            '310000': '上海市',
+            '320000': '江苏省',
+            '330000': '浙江省',
+            '340000': '安徽省'
+        },
+        'image' :{
+            list : Random.image('200x100')
+        },
+        'xinje|1-5':5
+    })
+
+    console.log(JSON.stringify(data))
+
+    //使用Random
+    
+    Random.character()
+    // console.log(Mock.mock('@character'))
+
+    //生成指定宽高的图片
+    // console.log(Random.image('200x100'))
+    </script>
+</body>
+</html>
